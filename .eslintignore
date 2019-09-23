@@ -1,0 +1,10 @@
+src/serviceWorker.js
+
+# CRA build folder
+build/
+
+# Temp files
+_*/
+
+# re-enable linting on .*rc.js config files
+!.*rc.js

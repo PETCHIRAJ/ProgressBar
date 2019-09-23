@@ -2,6 +2,30 @@
   "name": "progress-bar",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "test:once": "cross-env CI=true react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .jsx,.js",
+    "lint:fix": "npm run lint -- --fix",
+    "validate": "npm run lint && npm run test:once"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie >= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run validate"
+    }
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.9.0",
@@ -9,11 +33,19 @@
     "react-scripts": "0.9.5",
     "styled-components": "^4.3.2"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "cross-env": "^6.0.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.27.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-hooks": "^1.5.1",
+    "husky": "^3.0.5",
+    "stylelint": "^9.6.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.0"
   }
 }
